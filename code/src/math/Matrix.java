@@ -127,7 +127,6 @@ public class Matrix {
 	public Matrix deepCopy(){
 		return new Matrix(this.arr);
 	}
-	//printer
 	
 	/**
 	 * This prints out the array with each line as a row.
@@ -167,6 +166,12 @@ public class Matrix {
 		return result;
 	}
 
+
+	/**
+	 * Add a double offset to each element in matrix.
+	 * @param scalar
+	 * @return matrix C = A + [1]b
+	 */
 	public Matrix plus(double scalar) {
 
 		int columnsize = this.getColumnSize();
@@ -210,7 +215,7 @@ public class Matrix {
 	/**
 	 * Linear Algebra dot product/composition operation. (non-commutative)
 	 * @param that - another matrix where ||this(j)|| = ||that(i)||
-	 * @return matrix C = A * B
+	 * @return matrix C = AB
 	 */
 	public Matrix dot(Matrix that){
 
@@ -284,7 +289,7 @@ public class Matrix {
 	/**
 	 * Element wise division between two matrices.
 	 * @param that - another matrix of the same dimension
-	 * @return - matrix C = A o/ B
+	 * @return - matrix C = A / B
 	 */
 	public Matrix eleDiv(Matrix that) {
 		
@@ -305,6 +310,11 @@ public class Matrix {
 		return result;
 	}
 
+	/**
+	 * Element wise multiplication between two matrices.
+	 * @param power - another matrix of the same dimension
+	 * @return - matrix C = A o^ b
+	 */
 	public Matrix elePow(double power) {
 		
 		int columnsize = this.getColumnSize();
@@ -374,7 +384,10 @@ public class Matrix {
 		
 		return result;		
 	}
-
+	/**
+	 * This method returns a vector of the rows of the matrix appended together
+	 * @return
+	 */
 	public Vector flatten() {
 
 		Vector result = new Vector(this.getColumnSize() * this.getRowSize());

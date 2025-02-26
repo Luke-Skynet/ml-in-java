@@ -130,6 +130,11 @@ public class Vector {
 		return result;
 	}
 
+	/**
+	 * Element-wise vector value offset.
+	 * @param scalar - double to add to each vector element
+	 * @return vector C = A[i] + scalar for i in A
+	 */	
 	public Vector plus(double scalar) {
 		
 		Vector result = new Vector(this.getLength());
@@ -215,7 +220,12 @@ public class Vector {
 		
 		return result;
 	}
-	
+
+	/**
+	 * Vector outer product
+	 * @param that - aother vector
+	 * @return matrix - M[i][j] = A[i] * B[j]
+	 */
 	public Matrix outer(Vector that) {
 		
 		Matrix result = new Matrix(this.getLength(), that.getLength());
@@ -229,6 +239,10 @@ public class Vector {
 		return result;
 	}
 
+	/**
+	 * Element-wise vector logarithm.
+	 * @return B[i] = ln(A[i]) for i in A
+	 */
 	public Vector log() {
 		Vector result = new Vector(this.getLength());
 		for(int i = 0; i < result.getLength(); i++){
@@ -236,7 +250,11 @@ public class Vector {
 		}
 		return result;
 	}
-
+	
+	/**
+	 * Element-wise vector power.
+	 * @return B[i] = A[i]^n for i in A
+	 */
 	public Vector pow(double power) {
 		Vector result = new Vector(this.getLength());
 		for(int i = 0; i < result.getLength(); i++){
