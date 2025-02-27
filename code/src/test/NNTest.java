@@ -21,8 +21,8 @@ public class NNTest {
         try{
             // Adapted from https://github.com/turkdogan/mnist-data-reader
 
-            String dataFilePath  = "/Users/luke/git/regression-in-java/code/src/test/data/t10k-images.idx3-ubyte";
-            String labelFilePath = "/Users/luke/git/regression-in-java/code/src/test/data/t10k-labels.idx1-ubyte";
+            String dataFilePath  = "/Users/luke/git/ml-in-java/code/src/test/data/t10k-images.idx3-ubyte";
+            String labelFilePath = "/Users/luke/git/ml-in-java/code/src/test/data/t10k-labels.idx1-ubyte";
 
             DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(dataFilePath)));
             int magicNumber = dataInputStream.readInt();
